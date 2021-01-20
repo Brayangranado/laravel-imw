@@ -2,10 +2,10 @@
 
 @section('content')
     <table id="tabla" class="table table-bordered">
-        <thead><tr><th>Código</th><th>Producto</th><th>Precio Unidad</th></tr></thead>
+        <thead><tr><th>Código</th><th>Producto</th><th>Precio Unidad</th><th>Unidades</th></tr></thead>
         <tbody>
             @foreach($productos as $p)
-                <tr><td>{{$p->id}}</td><td>{{$p->producto}}</td><td>{{$p->precio_unidad}}</td></tr>
+                <tr><td>{{$p->id}}</td><td>{{$p->producto}}</td><td>{{$p->precio_unidad}}</td><td>{{$p->unidades_existencia}}</td></tr>
             @endforeach
         </tbody>
     </table>
