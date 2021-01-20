@@ -23,4 +23,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get("/listado",[ProductosController::class,"listado"]);
+Route::get("/listado",[ProductosController::class,"listado"])->middleware("auth");
