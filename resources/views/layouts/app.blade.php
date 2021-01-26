@@ -41,7 +41,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark  shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -94,10 +94,22 @@
                 </div>
             </div>
         </nav>
-
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        
         <main class="contenido">
             @yield('content')
         </main>
+        <nav class="navbar fixed-bottom navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Fixed bottom</a>
+          </nav>
     </div>
 </body>
 </html>

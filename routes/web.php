@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductosController;
-
+use App\Http\Controllers\ClientesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,4 +23,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get("/listado",[ProductosController::class,"listado"])->middleware("auth");
+Route::get("/listado",[ProductosController::class,"listado"]);
+
+
+Route::resource('Cliente', ClientesController::class);
