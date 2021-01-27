@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
 
+
 class ClientesController extends Controller
 {
 
     public function __construct(){
-
+     
     }
     
     
@@ -44,7 +45,9 @@ class ClientesController extends Controller
 
     public function show($id)
     {
-        echo "mostrar cliente";
+        $cliente=Cliente::find($id);
+
+        return view("clientes.show",compact("cliente"));
     }
 
 
@@ -61,7 +64,8 @@ class ClientesController extends Controller
 
     public function destroy($id)
     {
-          //Cliente::find($id)->delete();
-          echo "borrar";
+          Cliente::find($id)->delete();
+ 
+          return redirect()->route('Cliente.index');
     }
 }

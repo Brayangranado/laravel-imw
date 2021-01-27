@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\ClientesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,3 +28,8 @@ Route::get("/listado",[ProductosController::class,"listado"]);
 
 
 Route::resource('Cliente', ClientesController::class);
+
+Route::get("/idioma/{pais?}",function ($pais="es"){
+    Session::put('locale', $pais);
+    return redirect()->route('Cliente.create');
+});
