@@ -10,4 +10,10 @@ class Cliente extends Model
     use HasFactory;
 
     protected $guarded=[];
+
+    public function pedidos()
+    {
+        return $this->hasMany(Pedido::class);
+    }
+
 }

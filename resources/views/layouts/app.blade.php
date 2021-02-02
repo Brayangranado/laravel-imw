@@ -15,9 +15,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
-    
-   
-    <!-- Scripts 
+
+
+    <!-- Scripts
 
     <script src="{{ asset('js/app.js') }}" defer></script>
 -->
@@ -25,7 +25,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- Styles 
+    <!-- Styles
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     -->
     <style>
@@ -39,7 +39,7 @@
     </style>
 
 @php
-    App::setLocale(Session::get('locale'));    
+    App::setLocale(Session::get('locale'));
 @endphp
 
 </head>
@@ -66,14 +66,14 @@
                         <a href={{url('/idioma/es')}}><img width=32px src="https://icon-library.com/images/spanish-flag-icon/spanish-flag-icon-3.jpg"></a>
                         <a href={{url('/idioma/en')}}><img width=32px src="https://icon-library.com/images/british-flag-icon/british-flag-icon-2.jpg"></a>
 
-                        
+
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-                            
+
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -103,21 +103,30 @@
             </div>
         </nav>
         @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+            <div style='margin-top: 20px;'>
+                @foreach ($errors->all() as $error)
+                    <div style='margin-left: 50px; margin-right: 50px;' class="alert alert-danger alert-dismissible fade show panel_error" role="alert">
+                        <strong>{{$error}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endforeach
             </div>
         @endif
-        
+
         <main class="contenido">
             @yield('content')
         </main>
-        <nav class="navbar fixed-bottom navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Fixed bottom</a>
-          </nav>
+
     </div>
 </body>
 </html>
+
+<script>
+    $(document).ready(function(){
+         setTimeout(function(){
+             $(".panel_error").fadeOut();
+         }, 5000);
+    });
+</script>

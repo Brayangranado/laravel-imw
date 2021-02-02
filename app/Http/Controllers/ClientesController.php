@@ -10,14 +10,12 @@ class ClientesController extends Controller
 {
 
     public function __construct(){
-     
+
     }
-    
-    
-    
+
     public function index()
     {
-        $clientes=Cliente::all();
+        $clientes=Cliente::withCount(['pedidos'])->paginate(15);
 
         return view("clientes.index",compact("clientes"));
     }
@@ -64,8 +62,12 @@ class ClientesController extends Controller
 
     public function destroy($id)
     {
-          Cliente::find($id)->delete();
- 
-          return redirect()->route('Cliente.index');
+       try {
+            Cliente::find($id)->delete();
+       } catch(\Illuminate\Database\QueryException $ex){
+            return redirect()->route('Cliente.index')->withErrors(['No se puede borrar el cliente porque tiene pedidos']);;
+       }
+
+       return redirect()->route('Cliente.index');
     }
 }
