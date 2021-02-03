@@ -15,8 +15,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
     <!-- Scripts
 
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -37,10 +37,6 @@
             text-color: red;
         }
     </style>
-
-@php
-    App::setLocale(Session::get('locale'));
-@endphp
 
 </head>
 <body>
@@ -113,6 +109,25 @@
                     </div>
                 @endforeach
             </div>
+        @endif
+{{--
+
+        @if (session('mensaje'))
+            <div style='margin-top: 20px;'>
+                <div style='margin-left: 50px; margin-right: 50px;' class="alert alert-success alert-dismissible fade show panel_error" role="alert">
+                    <strong>{{session('mensaje')}}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        @endif
+--}}
+
+        @if (session('mensaje'))
+            <script>
+                 toastr.success("{{session('mensaje')}}","Clientes");
+            </script>
         @endif
 
         <main class="contenido">

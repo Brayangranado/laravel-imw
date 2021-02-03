@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cliente;
+use App;
+use Session;
 
 
 class ClientesController extends Controller
 {
 
     public function __construct(){
-
     }
 
     public function index()
@@ -37,7 +38,7 @@ class ClientesController extends Controller
 
         Cliente::create($request->all());
 
-        return redirect()->route("Cliente.index");
+        return redirect()->route('Cliente.index')->with('mensaje',__('textos.added_cliente'));;
     }
 
 
@@ -49,14 +50,16 @@ class ClientesController extends Controller
     }
 
 
-    public function edit($id)
+    public function edit(Cliente $Cliente)
     {
-        echo "Formulario para editar";
+        return view("clientes.create",compact("Cliente"));
     }
 
     public function update(Request $request, $id)
     {
-        echo "guardar lo editado";
+        Cliente::find($id)->update($request->all());
+        return redirect()->route('Cliente.index')->with('mensaje',__('textos.updated_cliente'));;
+
     }
 
 

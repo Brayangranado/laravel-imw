@@ -31,5 +31,5 @@ Route::resource('Cliente', ClientesController::class);
 
 Route::get("/idioma/{pais?}",function ($pais="es"){
     Session::put('locale', $pais);
-    return redirect()->route('Cliente.create');
+    return redirect()->back();
 });
