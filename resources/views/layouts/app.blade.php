@@ -30,15 +30,14 @@
     -->
     <style>
         .contenido {
-            padding: 40px;
+            padding: 20px;
         }
 
         .red {
-            text-color: red;
+            color: red;
         }
     </style>
 
-</head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark  shadow-sm">
@@ -53,7 +52,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <MARQUEE WIDTH=100% HEIGHT=60 ALIGN=BOTTOM color="red">
+                            
+                            <img src="https://i.ibb.co/4PYPNc8/7706c5f34af0a8979c0c99ce0690a193-removebg-preview.png" src="https://i.ibb.co/F0pt57D/copy-of-copy-of-untitled-1-removebg.png" border="0" width="20%">
+                            
+                        </MARQUEE>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
