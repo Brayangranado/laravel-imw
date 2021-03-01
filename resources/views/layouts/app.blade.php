@@ -17,6 +17,9 @@
     <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
     <!-- Scripts
 
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -51,12 +54,13 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        <MARQUEE WIDTH=100% HEIGHT=60 ALIGN=BOTTOM color="red">
+                    <MARQUEE WIDTH=100% HEIGHT=60 ALIGN=BOTTOM color="red">
                             
                             <img src="https://i.ibb.co/4PYPNc8/7706c5f34af0a8979c0c99ce0690a193-removebg-preview.png" src="https://i.ibb.co/F0pt57D/copy-of-copy-of-untitled-1-removebg.png" border="0" width="20%">
                             
-                        </MARQUEE>
+                    </MARQUEE>
+                    <ul class="navbar-nav mr-auto">
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->

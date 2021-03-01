@@ -32,6 +32,9 @@
             <th>@lang('textos.precio unidad')</th>
             <th>@lang('textos.unidades')</th>
             <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
         @foreach($productos as $p)
@@ -40,11 +43,23 @@
             <td><button type="button" class="btn btn-secondary"><a id='enlace' href='{{url("/Producto")}}/{{$p->id}}'>{{$p->producto}}</a></button></td>
             <td>{{$p->precio_unidad}}</td>
             <td>{{$p->unidades_existencia}}</td>
-            <td>
+            
+            <td align="center">
                 <a href="{{url('/Producto')}}/{{$p->id}}/edit"
-                    ><i style="color: green; font-size: 20px;" class="fas fa-edit fa-large"></i
-                ></a>
+                    ><i style="color: green; text-align: center; font-size: 20px;" class="fas fa-plus"></i></a>
             </td>
+            <td align="center">
+                <a href="{{url('/Producto')}}/{{$p->id}}/edit"
+                    ><i style="color: red; content-align: center; font-size: 20px;" class="fas fa-minus"></i></a>
+            </td>
+            <td align="center">
+                <a href="{{url('/Producto')}}/{{$p->id}}/edit"
+                    ><i style="color: red; font-size: 20px;" class="fas fa-trash"></i></a>
+            </td>
+            <td align="center">
+                <a href="{{ URL::to('/descargarpdf') }}" style="text-align: right;"><i style="color: green; font-size: 25px;" class="fas fa-file-pdf"></i></a>
+            </td>
+            
         </tr>
         @endforeach
 </table>

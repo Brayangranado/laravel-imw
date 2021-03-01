@@ -15,8 +15,8 @@ class ProveedoresController extends Controller
 
     public function index(){
 
-        $proveedores=Proveedor::all();
-
+        $proveedores=Proveedor::withCount(['productos'])->paginate(15);
+         
         return view("proveedores.index",compact("proveedores"));
     }
 }

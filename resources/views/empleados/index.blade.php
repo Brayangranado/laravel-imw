@@ -23,27 +23,29 @@
 </style>
 @php App::setLocale(Session::get('locale')); @endphp @section('content')
 <a id="listado" href='{{url("/home")}}' class="btn btn-primary">@lang('textos.home')</a>
-<a id="listado" href='{{url("/Proveedor/create")}}' class="btn btn-primary">@lang('textos.añadir proveedor')</a>
-<table id="table_id" class="table table-bordered table-striped">
+<a id="listado" href='{{url("/Producto/create")}}' class="btn btn-primary">@lang('textos.añadir empleado')</a>
+<table class="table table-bordered table-striped">
     <thead>
         <tr>
-            <th>@lang('textos.empresa')</th>
-            <th>@lang('textos.contacto')</th>
-            <th>@lang('textos.cargo contacto')</th>
-            <th>@lang('textos.n_productos')</th>
+            <th>@lang('textos.codigo')</th>
+            <th>@lang('textos.nombre')</th>
+            <th>@lang('textos.apellidos')</th>
+            <th>@lang('textos.fecha nacimiento')</th>
+            <th>@lang('textos.fecha contratacion')</th>
             <th></th>
         </tr>
     </thead>
     
     <tbody>
-        @foreach($proveedores as $p)
+        @foreach($empleados as $e)
         <tr>
-            <td><button type="button" class="btn btn-secondary"><a id='enlace' href='{{url("/Proveedor")}}/{{$p->id}}'>{{$p->empresa}}</a></button></td>
-            <td>{{$p->contacto}}</td>
-            <td>{{$p->cargo_contacto}}</td>
-            <td>{{$p->productos_count}}</td>
+            <td>{{$e->id}}</td>
+            <td>{{$e->nombre}}</td>
+            <td>{{$e->apellidos}}</td>
+            <td>{{$e->fecha_nacimiento}}</td>
+            <td>{{$e->fecha_contratacion}}</td>
             <td>
-                <a href="{{url('/Producto')}}/{{$p->id}}/edit"
+                <a href="{{url('/Empleado')}}/{{$e->id}}/edit"
                     ><i style="color: green; font-size: 20px;" class="fas fa-edit fa-large"></i
                 ></a>
             </td>
@@ -51,11 +53,5 @@
         @endforeach
     </tbody>
 </table>
-
-<script>
-$(document).ready( function () {
-    $('table_id').DataTable();
-} );
-</script>
 
 @endsection

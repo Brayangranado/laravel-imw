@@ -27,7 +27,7 @@
         <th>@lang("textos.empresa")</th>
         <th>@lang("textos.contacto")</th>
         <th>@lang("textos.direccion")</th>
-        <th>@lang("textos.Nยบ_pedidos")</th>
+        <th>@lang("textos.N_pedidos")</th>
         <th></th>
         <th></th>
     </tr>

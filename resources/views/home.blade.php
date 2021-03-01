@@ -88,8 +88,10 @@
             <div class="card">
                 <nav>
                     <a href="{{url('/Cliente')}}" class="btn btn-primary">@lang("textos.cliente")</a>
+                    <a href="{{url('/Empleado')}}" class="btn btn-primary">@lang("textos.empleado")</a>
                     <a href="{{url('/Producto')}}" class="btn btn-primary">@lang("textos.producto")</a>
-                    <a href="{{url('/Proveedor')}}" class="btn btn-primary">@lang("proveedor")</a>
+                    <a href="{{url('/Proveedor')}}" class="btn btn-primary">@lang("textos.proveedor")</a>
+                    <a href="{{url('/Categoria')}}" class="btn btn-primary">@lang("textos.categoria")</a>
                 </nav>
 
                 <div class="card-body">
